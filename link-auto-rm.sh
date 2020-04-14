@@ -8,10 +8,13 @@ dwld_token=`tail -8 /var/log/nginx/access.log | grep -v "files_pdfviewer" | grep
 while check_owncloud_downloads
 do
        if [ -n "$dwld"  ]
-       then
-           # Delete link from datadase
-           mysql -D owncloud -e "delete from oc_share where token = '$dwld_token'"
+       then     # Find token in DB, and choose our link name from others 
+                VAR=$( mysql -D owncloud -e "select share_name from oc_share where token = '$dwld_token'" | grep -c "one_download" )
+                if [ $VAR = "1" ]
+                then # Remove link from DB
+                mysql -D owncloud -e "delete from oc_share where token = '$dwld_token'"
+                fi
        else
-           sleep 1
+                sleep 1
        fi
 done
