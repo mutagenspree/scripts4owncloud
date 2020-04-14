@@ -1,5 +1,5 @@
 ### scripts4owncloud
-Script for Owncloud\Nextcloud
+Scripts for Owncloud\Nextcloud
 -----------------------------
 
 If you want scripts to work in Nextcloud - change the table prefix
