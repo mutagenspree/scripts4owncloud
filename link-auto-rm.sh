@@ -10,7 +10,7 @@ while check_owncloud_downloads
 do
        if [ -n "$dwld"  ]
        then     # Find token in DB, and choose our link name from others 
-                VAR=$( mysql -D owncloud -e "select share_name from oc_share where token = '$dwld_token'" | grep -c $link_nmae )
+                VAR=$( mysql -D owncloud -e "select share_name from oc_share where token = '$dwld_token'" | grep -c $link_name )
                 if [ $VAR = "1" ]
                 then # Remove link from DB
                 mysql -D owncloud -e "delete from oc_share where token = '$dwld_token'"
