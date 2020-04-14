@@ -1,6 +1,9 @@
 ### scripts4owncloud
 Script for Owncloud\Nextcloud
 -----------------------------
+
+If you want scripts to work in Nextcloud - change the table prefix
+
 ##### link-auto-rm
 
 With this script, you can create links for one download. After the file is downloaded, the link (not file) will be automatically deleted. 
