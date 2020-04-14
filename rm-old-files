@@ -3,7 +3,7 @@
 # The device where the /data/ folder is located 
 dev_path='/dev/sdb'
 # Data folder path
-data_path='/mnt/sdb/owncloud/data/
+data_path='/mnt/sdb/owncloud/data/'
 
 # when the percentage of used space exceeds 85%...
 if  [[ `df | grep "$dev_path" | sed 's/%//g' | awk '{print$5}'` -gt 85 ]];  then
